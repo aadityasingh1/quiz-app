@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: purple;
+}
+
+.error-container {
+    text-align: center;
+    background-color: rgba(206, 90, 216, 0.274);
+    /* Match header background from home page */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    width: 300px;
+}
+
+.error-title {
+    color: white;
+    font-size: 2em;
+    margin: 0 0 15px 0;
+}
+
+.error-message {
+    color: white;
+    font-size: 1.09em;
+    margin: 0 0 20px 0;
+}
+
+.error-home-link {
+    background-color: rgb(212, 193, 214);
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    display: inline-block;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.error-home-link:hover {
+    background-color: pink;
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.error-home-link:active {
+    background-color: purple;
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Quiz Page</title>
+    <style>
+        #error-msg {
+            display: none;
+            color: red;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Quiz</h1>
+        <div>
+            <p>Select from the below list of available quizzes:</p>
+            <a href="./pages/cultural.html" class="quiz-link">Culture based Quiz</a>
+            <a href="./pages/tech.html" class="quiz-link">Tech based Quiz</a>
+            <a href="./pages/sports.html" class="quiz-link">Sports based Quiz</a>
+            <a href="./pages/entertainment.html" class="quiz-link">Entertainment based Quiz</a>
+            <a href="./pages/food.html" class="quiz-link">Food based Quiz</a>
+            <a href="./pages/education.html" class="quiz-link">Education based Quiz</a>
+            <a href="./pages/health.html" class="quiz-link">Health based Quiz</a>
+            <a href="./pages/finance.html" class="quiz-link">Finance based Quiz</a>
+            <a href="./pages/religion.html" class="quiz-link">Religion based Quiz</a>
+            <a href="./pages/politics.html" class="quiz-link">Politics based Quiz</a>
+
+            <p id="error-msg">The page you are trying to access does not exist!</p>
+        </div>
+    </div>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.quiz-link');
+
+            links.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent navigation
+                    const url = event.target.href;
+
+                    // Check if the page exists
+                    fetch(url, { method: 'HEAD' })
+                        .then(response => {
+                            if (response.ok) {
+                                // If the page exists, navigate to it
+                                window.location.href = url;
+                            } else {
+                                // Navigate to custom error page if not found
+                                window.location.href = './pages/error.html';
+                            }
+                        })
+                        .catch(() => {
+                            // Handle network errors by navigating to the error page
+                            window.location.href = './pages/error.html';
+                        });
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
